@@ -8,7 +8,7 @@ import express from "express";
  import mediaRoute from "./routes/media.route.js";
  import purchaseRoute from "./routes/purchaseCourse.route.js";
  import courseProgressRoute from "./routes/courseProgress.route.js";
- import path from "path";
+// import path from "path";
 
  dotenv.config({});
 
@@ -20,7 +20,7 @@ const app = express();
 
 
 
- const __dirname = path.resolve()
+// const __dirname = path.resolve()
 
 
 // default middleware
@@ -41,10 +41,10 @@ app.use(cookieParser());
  
  
 
-app.use(express.static(path.join(__dirname , "/client/dist")))
-app.get('*' , (_,res) => {
-    res.sendFile(path.resolve(__dirname, "client" , "dist" , "index.html"))
-})
+// app.use(express.static(path.join(__dirname , "/client/dist")))
+// app.get('*' , (_,res) => {
+//     res.sendFile(path.resolve(__dirname, "client" , "dist" , "index.html"))
+// })
 
 app.listen(PORT, () => {
     console.log(`Server listen at port ${PORT}`);
